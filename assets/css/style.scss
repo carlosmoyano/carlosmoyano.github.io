@@ -1,0 +1,68 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+$g: #00ff66;
+$line: #2a2a2a;
+$muted: #9a9a9a;
+
+.cursor { animation: blink 1s steps(2, start) infinite; margin-left: 2px; }
+@keyframes blink { to { visibility: hidden; } }
+
+header .button { margin-right: 8px; }
+
+/* Barra lateral */
+#sidebar .side-title { color: $g; font-size: 1.1em; margin: 1.2em 0 .4em; }
+#sidebar .side-title:first-child { margin-top: 0; }
+#sidebar ul { list-style: none; padding: 0; margin: 0 0 1em; }
+#sidebar li { margin: .45em 0; word-break: break-word; }
+#sidebar .toc a::before { content: "> "; color: $g; }
+#sidebar .count { color: $muted; font-size: .85em; }
+
+/* Títulos de sección */
+#main-content h2.s { border-bottom: 1px solid $line; padding-bottom: .2em; margin-top: 1.6em; }
+#main-content h2.s:first-child { margin-top: 0; }
+.cat-desc { color: $muted; margin-top: 0; }
+
+/* Filtros */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 1.2em 0; }
+.filters button {
+  font: inherit; cursor: pointer; color: $g; background: transparent;
+  border: 1px solid $g; border-radius: 3px; padding: 4px 12px;
+}
+.filters button:hover, .filters button.active { background: rgba(0,255,102,.18); }
+
+/* Tarjetas */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin: 1em 0 1.6em; }
+.site-card {
+  display: flex; flex-direction: column; gap: 6px; position: relative;
+  border: 1px solid $line; border-top: 3px solid $g; border-radius: 4px;
+  padding: 14px; background: rgba(255,255,255,.02); color: inherit;
+  transition: transform .15s, box-shadow .15s, border-color .15s;
+}
+.site-card:hover { transform: translateY(-3px); border-color: $g; box-shadow: 0 0 14px rgba(0,255,102,.25); text-decoration: none; }
+.site-card h3 { margin: .2em 0 0; color: #fff; }
+.site-card p { margin: 0; color: #cfcfcf; font-size: .92em; flex: 1; }
+.site-card .go { color: $g; font-size: .9em; margin-top: 4px; }
+.site-card .pct { color: $muted; }
+
+.badge { align-self: flex-start; font-size: .75em; padding: 1px 8px; border-radius: 10px; border: 1px solid; }
+.badge.en-curso { color: #ffcc00; border-color: #ffcc00; }
+.badge.completado { color: $g; border-color: $g; }
+.badge.proximamente { color: $muted; border-color: $muted; }
+
+.site-card[data-status="proximamente"] { border-top-color: $muted; opacity: .8; }
+.site-card[data-status="en-curso"] { border-top-color: #ffcc00; }
+
+.progress { height: 6px; background: $line; border-radius: 3px; overflow: hidden; }
+.progress i { display: block; height: 100%; background: #ffcc00; }
+
+/* Etiquetas */
+.tags { display: flex; flex-wrap: wrap; gap: 5px; margin: .3em 0; }
+.tags span { border: 1px solid $g; border-radius: 3px; padding: 0 7px; font-size: .78em; color: $g; background: rgba(0,255,102,.06); }
+
+@media print {
+  header, #sidebar, .filters, .cursor { display: none !important; }
+  #main-content { width: 100% !important; float: none !important; }
+}

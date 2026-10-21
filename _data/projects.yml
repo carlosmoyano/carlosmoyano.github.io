@@ -1,0 +1,65 @@
+# ============================================================
+#  CATÁLOGO DE CURSOS Y PROYECTOS
+#  Cada categoría tiene una lista de "items". Para añadir uno:
+#  copia un bloque "- title: ..." y cambia los datos.
+#
+#  status:   en-curso | completado | proximamente
+#  progress: 0-100 (opcional, solo se muestra si está "en-curso")
+#  url:      dirección de la otra página de GitHub Pages
+# ============================================================
+
+- id: programacion
+  icon: "🐍"
+  title: "Programación"
+  description: "Cursos y ejercicios para aprender a programar paso a paso."
+  items:
+    - title: "Python desde cero"
+      description: "Sintaxis, estructuras de datos, funciones, ficheros, POO y pequeños proyectos prácticos."
+      url: "https://TU_USUARIO.github.io/curso-python/"
+      status: "en-curso"
+      progress: 45
+      tags: [Python, POO, Scripting]
+    - title: "Python avanzado y testing"
+      description: "Decoradores, generadores, asyncio, pytest y buenas prácticas."
+      url: "https://TU_USUARIO.github.io/python-avanzado/"
+      status: "proximamente"
+      tags: [Python, pytest, asyncio]
+    - title: "Git y GitHub"
+      description: "Control de versiones, ramas, pull requests y flujos de trabajo en equipo."
+      url: "https://TU_USUARIO.github.io/curso-git/"
+      status: "completado"
+      tags: [Git, GitHub, Workflow]
+
+- id: virtualizacion
+  icon: "🖥️"
+  title: "Virtualización y Sistemas"
+  description: "Laboratorios de infraestructura, máquinas virtuales y administración de sistemas."
+  items:
+    - title: "Curso de Virtualización"
+      description: "Hipervisores, redes virtuales, almacenamiento y snapshots con laboratorios guiados."
+      url: "https://TU_USUARIO.github.io/curso-virtualizacion/"
+      status: "en-curso"
+      progress: 20
+      tags: [Proxmox, VMware, KVM]
+    - title: "Docker y contenedores"
+      description: "Imágenes, volúmenes, redes y orquestación básica con Docker Compose."
+      url: "https://TU_USUARIO.github.io/curso-docker/"
+      status: "proximamente"
+      tags: [Docker, Compose, Linux]
+
+- id: redes
+  icon: "🔐"
+  title: "Redes y Seguridad"
+  description: "Fundamentos de redes, hardening y buenas prácticas de seguridad."
+  items:
+    - title: "Redes desde cero"
+      description: "Modelo OSI, direccionamiento IP, VLAN, enrutamiento y prácticas con Packet Tracer."
+      url: "https://TU_USUARIO.github.io/curso-redes/"
+      status: "completado"
+      tags: [TCP/IP, VLAN, Cisco]
+    - title: "Linux y administración"
+      description: "Usuarios, permisos, servicios, bash scripting y administración de servidores."
+      url: "https://TU_USUARIO.github.io/curso-linux/"
+      status: "en-curso"
+      progress: 60
+      tags: [Linux, Bash, systemd]

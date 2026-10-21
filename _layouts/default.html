@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'es-ES' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    {% seo %}
+  </head>
+  <body>
+
+    <header>
+      <div class="inner">
+        <a href="{{ '/' | relative_url }}"><h1>{{ site.title }}</h1></a>
+        <h2>{{ site.description }}<span class="cursor">_</span></h2>
+        {% if site.author.github %}
+        <a href="https://github.com/{{ site.author.github }}" class="button"><small>Sígueme en</small> GitHub</a>
+        {% endif %}
+        {% if site.portfolio_url and site.portfolio_url != "" %}
+        <a href="{{ site.portfolio_url }}" class="button"><small>Conóceme</small> Mi portfolio</a>
+        {% endif %}
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+
+        <section id="main-content">
+          {{ content }}
+        </section>
+
+        <aside id="sidebar">
+          {% assign total = 0 %}
+          {% for cat in site.data.projects %}{% assign total = total | plus: cat.items.size %}{% endfor %}
+
+          <h3 class="side-title">$ ls cursos/</h3>
+          <ul class="toc">
+            {% for cat in site.data.projects %}
+            <li><a href="{{ '/' | relative_url }}#{{ cat.id }}">{{ cat.title }}</a> <span class="count">({{ cat.items.size }})</span></li>
+            {% endfor %}
+          </ul>
+
+          <h3 class="side-title">$ stats</h3>
+          <ul>
+            <li>📚 {{ total }} cursos y proyectos</li>
+            <li>🗂️ {{ site.data.projects.size }} categorías</li>
+          </ul>
+
+          {% if site.author.name %}
+          <h3 class="side-title">$ whoami</h3>
+          <ul>
+            <li>👤 {{ site.author.name }}</li>
+            {% if site.author.email %}<li>✉️ <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>{% endif %}
+            {% if site.author.linkedin %}<li>🔗 <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}">LinkedIn</a></li>{% endif %}
+          </ul>
+          {% endif %}
+        </aside>
+
+      </div>
+    </div>
+
+  </body>
+</html>

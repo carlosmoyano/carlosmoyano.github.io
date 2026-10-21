@@ -1,0 +1,32 @@
+# ============================================================
+#  HUB CENTRAL · jekyll-theme-hacker
+#  Página principal que enlaza a tus cursos y proyectos.
+#  Los cursos se editan en  _data/projects.yml
+# ============================================================
+theme: jekyll-theme-hacker
+lang: es-ES
+
+title: "Mi Hub de Aprendizaje"
+description: "Cursos, laboratorios y proyectos de informática"
+url: "https://TU_USUARIO.github.io"   # Si el repo es TU_USUARIO.github.io
+baseurl: ""                            # Este repo es TU_USUARIO.github.io (raíz)
+
+author:
+  name: "Tu Nombre Apellido"
+  github: "TU_USUARIO"
+  linkedin: "tu-perfil"
+  email: "tu@email.com"
+
+# Enlace a tu portfolio/CV (la otra web). Déjalo vacío para ocultarlo.
+portfolio_url: "https://TU_USUARIO.github.io/portfolio/"
+
+plugins:
+  - jekyll-seo-tag
+
+markdown: kramdown
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .bundle

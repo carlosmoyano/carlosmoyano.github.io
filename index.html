@@ -1,0 +1,62 @@
+---
+layout: default
+title: Inicio
+---
+<h2 class="s">Bienvenido</h2>
+<p>Este es el <b>punto de entrada</b> a todo lo que estoy aprendiendo y construyendo. Cada curso o proyecto vive en su propia página de GitHub Pages; desde aquí puedes llegar a cualquiera de ellos.</p>
+
+<div class="filters">
+  <button class="active" data-f="all">Todos</button>
+  <button data-f="en-curso">En curso</button>
+  <button data-f="completado">Completados</button>
+  <button data-f="proximamente">Próximamente</button>
+</div>
+
+{% for cat in site.data.projects %}
+<section class="category" id="{{ cat.id }}">
+  <h2 class="s">{{ cat.icon }} {{ cat.title }}</h2>
+  <p class="cat-desc">{{ cat.description }}</p>
+  <div class="grid">
+    {% for item in cat.items %}
+    {% case item.status %}
+      {% when "en-curso" %}{% assign label = "En curso" %}
+      {% when "completado" %}{% assign label = "Completado" %}
+      {% else %}{% assign label = "Próximamente" %}
+    {% endcase %}
+    <a class="site-card" href="{{ item.url }}" data-status="{{ item.status }}">
+      <span class="badge {{ item.status }}">{{ label }}</span>
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.description }}</p>
+      {% if item.status == "en-curso" and item.progress %}
+      <div class="progress"><i style="width:{{ item.progress }}%"></i></div>
+      <small class="pct">{{ item.progress }}% completado</small>
+      {% endif %}
+      <div class="tags">{% for t in item.tags %}<span>{{ t }}</span>{% endfor %}</div>
+      <span class="go">Abrir →</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endfor %}
+
+<script>
+  (function () {
+    var btns = document.querySelectorAll('.filters button');
+    var cards = document.querySelectorAll('.site-card');
+    var cats = document.querySelectorAll('.category');
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        btns.forEach(function (x) { x.classList.remove('active'); });
+        b.classList.add('active');
+        var f = b.getAttribute('data-f');
+        cards.forEach(function (c) {
+          c.style.display = (f === 'all' || c.getAttribute('data-status') === f) ? '' : 'none';
+        });
+        cats.forEach(function (s) {
+          var visible = s.querySelectorAll('.site-card:not([style*="none"])').length;
+          s.style.display = visible ? '' : 'none';
+        });
+      });
+    });
+  })();
+</script>

@@ -13,7 +13,7 @@ baseurl: ""                            # Este repo es TU_USUARIO.github.io (raí
 
 author:
   name: "Carlos Moyano"
-  github: "carlosmoyano"
+  #github: "carlosmoyano"
   
 # Enlace a tu portfolio/CV (la otra web). Déjalo vacío para ocultarlo.
 #portfolio_url: "https://TU_USUARIO.github.io/portfolio/"

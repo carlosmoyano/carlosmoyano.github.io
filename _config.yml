@@ -8,17 +8,15 @@ lang: es-ES
 
 title: "Mi Hub de Aprendizaje"
 description: "Cursos, laboratorios y proyectos de informática"
-url: "https://TU_USUARIO.github.io"   # Si el repo es TU_USUARIO.github.io
+url: "https://carlosmoyano.github.io"   
 baseurl: ""                            # Este repo es TU_USUARIO.github.io (raíz)
 
 author:
-  name: "Tu Nombre Apellido"
-  github: "TU_USUARIO"
-  linkedin: "tu-perfil"
-  email: "tu@email.com"
-
+  name: "Carlos Moyano"
+  github: "carlosmoyano"
+  
 # Enlace a tu portfolio/CV (la otra web). Déjalo vacío para ocultarlo.
-portfolio_url: "https://TU_USUARIO.github.io/portfolio/"
+#portfolio_url: "https://TU_USUARIO.github.io/portfolio/"
 
 plugins:
   - jekyll-seo-tag

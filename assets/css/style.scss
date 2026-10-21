@@ -12,6 +12,11 @@ $muted: #9a9a9a;
 
 header .button { margin-right: 8px; }
 
+body {
+  padding-left: 24px;  /* Espacio en el borde izquierdo */
+  padding-right: 24px; /* Espacio en el borde derecho */
+}
+
 /* Barra lateral */
 #sidebar .side-title { color: $g; font-size: 1.1em; margin: 1.2em 0 .4em; }
 #sidebar .side-title:first-child { margin-top: 0; }
